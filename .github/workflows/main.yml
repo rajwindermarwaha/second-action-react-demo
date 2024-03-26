@@ -23,7 +23,7 @@ jobs:
       - name: Getting Artifacts
         uses: actions/upload-artifact@v3
         with:
-          name: artifacts-after-build
+          name: dist-files
           path: |
             dist
             package.json
