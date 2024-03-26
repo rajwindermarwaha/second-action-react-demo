@@ -25,6 +25,6 @@ jobs:
         with:
           name: artifacts-after-build
           path: |
-            dest
+            dist
             package.json
         
