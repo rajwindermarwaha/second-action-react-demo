@@ -17,9 +17,9 @@ jobs:
       - name: install dependencies
         run: npm ci
       - name: Run tests
-        run: npm test
+        run: npm run test
       - name: Build tests
-        run: npm build
+        run: npm run build
       - name: Getting Artifacts
         uses: actions/upload-artifact@v3
         with:
