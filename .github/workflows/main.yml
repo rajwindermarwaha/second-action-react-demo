@@ -5,7 +5,7 @@ on:
       - opened
   workflow_dispatch:
 env:
-  name: sample
+  name: ${{ secrets.name }}
 jobs:
 
   test:
