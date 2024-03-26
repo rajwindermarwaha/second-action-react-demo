@@ -18,3 +18,13 @@ jobs:
         run: npm ci
       - name: Run tests
         run: npm test
+      - name: Build tests
+        run: npm build
+      - name: Getting Artifacts
+        uses: actions/upload-artifacts@v3
+        with:
+          name: artifacts-after-build
+          path: |
+            dest
+            package.json
+        
