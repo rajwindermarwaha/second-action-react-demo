@@ -39,6 +39,6 @@ jobs:
       - name: list-artifacts
         run: ls
       - name: using env
-        run: echo "the name of the env is $ {{ env.name }}"
+        run: echo "the name of the env is ${{ env.name }}"
         
         
