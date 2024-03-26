@@ -4,7 +4,10 @@ on:
     types: 
       - opened
   workflow_dispatch:
+env:
+  name: sample
 jobs:
+
   test:
     runs-on: ubuntu-latest
     steps:
@@ -35,5 +38,7 @@ jobs:
           name: dist-files
       - name: list-artifacts
         run: ls
+      - name: using env
+        run: echo "the name of the env is $ {{ name }}"
         
         
