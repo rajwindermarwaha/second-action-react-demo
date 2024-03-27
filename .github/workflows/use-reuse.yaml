@@ -7,4 +7,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: using reuse
-        uses: ./.github/workflow/reuse.yaml
+        uses: ./.github/workflows/reuse.yaml
