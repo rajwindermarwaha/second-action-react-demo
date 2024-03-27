@@ -5,6 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        run: actions/checkout@v3
+        uses: actions/checkout@v3
       - name: using reuse
         uses: ./.github/workflow/reuse.yaml
