@@ -1,4 +1,4 @@
-name: reuse-worflow
+name: use-reuse-worflow
 on: workflow_dispatch
 jobs:
   test:
