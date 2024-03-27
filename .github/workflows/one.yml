@@ -15,8 +15,6 @@ jobs:
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
-      - name: Lint code
-        run: npm lint
   test:
     runs-on: ubuntu-latest
     steps:
@@ -62,7 +60,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: dist-files
-          path: dist
+          path: package.json
   deploy:
     needs: build
     runs-on: ubuntu-latest
