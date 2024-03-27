@@ -1,8 +1,8 @@
 name: reuse-worflow
-on: workflow_dispat
+on: workflow_dispatch
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - name: using reuse
-        run:  use: ./.github/workflow/reuse.yaml
+        uses: ./.github/workflow/reuse.yaml
