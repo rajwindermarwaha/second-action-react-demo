@@ -1,0 +1,41 @@
+name: use-reuse-worflow
+on: workflow_dispatch
+env:
+  name: ${{ secrets.name }}
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get-code
+        uses: actions/checkout@v3
+      - name: Install NodeJS
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install dependencies
+        run: npm ci
+      - name: Run tests
+        run: npm run test
+      - name: Build tests
+        run: npm run build
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist-files
+          path: package.json
+  download-artifact:
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Download-artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist-files
+      - name: list-artifacts
+        run: ls
+      - name: using env
+        run: echo "the name of the env is ${{ env.name }}"
+  re-use:
+    needs: test
+    uses: ./.github/workflows/reuse.yaml

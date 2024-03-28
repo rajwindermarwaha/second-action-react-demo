@@ -1,0 +1,16 @@
+name: Using_Matrix
+on: workflow_dispatch
+jobs:
+  build:
+    strategy:
+      matrix:
+        operating-system: [windows-latest,ubuntu-latest]
+        node-version: [12,14]
+    runs-on: ${{ matrix.operating-system }}
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: NodeJS Install
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
