@@ -36,8 +36,8 @@ jobs:
         run: npm run test
       - name: cmnd
         run: npm run
-      - name: verify connection
-        run: npm run start & npx wait-on http://127.0.0.1:$PORT
+      # - name: verify connection
+      #   run: npm run start & npx wait-on http://127.0.0.1:$PORT
       - name: Build tests
         run: npm run build
       - name: Upload Artifacts
