@@ -1,0 +1,8 @@
+name: using custom actions
+description: "Sample Custom Actions"
+runs:
+  using: 'composite'
+  steps:
+  - name: Install NodeJS
+    uses: actions/setup-node@v3
+  
