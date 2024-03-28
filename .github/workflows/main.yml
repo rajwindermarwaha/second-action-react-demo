@@ -12,6 +12,17 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: node:16
+    env:
+      MONGODB_CONNECTION_PROTOCOL: mongodb
+      MONGODB_CLUSER_ADDRESS: mongodb
+      MONGODB_USERNAME: admin
+      MONGODB_PASSWORD: admin
+    services:
+      mongo:
+        image: mongo
+        env:
+          MONGO_INITDB_ROOT_USERNAME: admin
+          MONGO_INITDB_ROOT_PASSWORD: admin
     steps:
       - name: Get-code
         uses: actions/checkout@v3
